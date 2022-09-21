@@ -10,24 +10,32 @@ body {
 
 table {
     margin: auto;
-    margin-top: 8%;
+    margin-top: 5%;
     border-spacing: 3px;
 }
 
+
+
 .cell {
     padding: 5px;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     text-align: center;
     font-size: 1.5em;
-    background-color: rgb(195, 195, 195);
+    background-color: rgb(226, 226, 226);
     color: rgb(91, 91, 248);
     font-weight: bold;
 }
 
 .unrevealed {
-    background: rgb(203, 201, 201);
-    background: radial-gradient(circle, rgba(203, 201, 201, 1) 17%, rgba(80, 80, 80, 1) 100%);
+    /* background: rgb(203, 201, 201);
+    background: radial-gradient(circle, rgba(203, 201, 201, 1) 17%, rgba(80, 80, 80, 1) 100%); */
+    background-color: #C0C0C0;
+    border: 1.5px solid;
+    border-top-color: #ffffff;
+    border-right-color: #7B7B7B;
+    border-bottom-color: #7B7B7B;
+    border-left-color: #ffffff;
 }
 
 .cell img {
