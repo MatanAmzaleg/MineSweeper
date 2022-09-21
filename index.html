@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineSweeper</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body onload="init()">
+    <h1 class="main-title">MineSweeper💥</h1>
+    <div class="bar">
+        <span class="sec-span">00:00</span><span class="ms-span"></span>
+        <h3>moves: <span class="moves"></span></h3>
+        <span class="lives"></span><br>
+        <button onclick="playAgain()" class="game-status">status</button>
+    </div>
+    <div class="table-container">
+        <table class="table">
+
+        </table>
+        <div class="btn-div">
+        <button onclick="chooseLvl(this)" class="lvl-btn">easy👍</button>
+        <button onclick="chooseLvl(this)" class="lvl-btn">hard🤞</button>
+        <button onclick="chooseLvl(this)" class="lvl-btn">extreme👾</button>
+    </div>
+    </div>
+    <script src="js/game.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/renderings.js"></script>
+</body>
+
+</html>
