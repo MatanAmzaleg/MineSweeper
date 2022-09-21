@@ -17,18 +17,19 @@ var gLevel = {
 
 var gGame = {
     isOn: false,
-    shownCount: 0,
+    shownCount: 1,
     markedCount: 0,
     secsPassed: 0,
-    clicksCount: 0
+    clicksCount: null
 }
 
 var gameStatus = '😄'
 var gLives
-var gMinesCount = 2
+var gMinesCount = 0
 
 function init() {
     gGame.isOn = true
+    gGame.clicksCount = 0
     gBoard = buildBoard()
     renderBoard(gBoard, '.table')
     console.table(gBoard)
@@ -42,7 +43,8 @@ function buildBoard() {
     for (var i = 0; i < gLevel.SIZE; i++) {
         board.push([])
         for (var j = 0; j < gLevel.SIZE; j++) {
-            board[i][j] =  (Math.random() > 0.2) ? MINE : EMPTY
+            board[i][j] =  (Math.random() > 0.2) ? EMPTY : MINE
+            if(board[i][j]=== MINE) gMinesCount++
     }
         }
             return board
@@ -103,11 +105,16 @@ function playAgain() {
     gGame.markedCount = 0
     gGame.secsPassed = 0
     gGame.clicksCount = 0
-    gGame.clicksCount = 0
     gMinesCount = 0
     gLives = 0
     gameStatus = '😄'
-    init()
+    gGame.isOn = true
+    gBoard = buildBoard()
+    renderBoard(gBoard, '.table')
+    console.table(gBoard)
+    gLives = (gMinesCount < 3) ? gMinesCount : 3
+    renderHearts()
+    renderGameStatus()
 
 }
 
@@ -131,13 +138,22 @@ function chooseLvl(elBtn){
 }
 
 function checkVictory(){
-    var numOfShownToWin = (gLevel.SIZE*gLevel.SIZE) - gMinesCount 
-    if(gGame.shownCount=== numOfShownToWin){
+    var cellsLeftToWin = (gBoard.length*gBoard.length) - gMinesCount
+    console.log(gMinesCount , 'gMinesCount');
+    for(var i = 0 ; i < gBoard.length ; i++){
+        for(var j = 0 ; j < gBoard.length ; j ++){
+            var elCell = document.querySelector(`.cell-${i}-${j}`)
+            if(!elCell.classList.contains('unrevealed') && gBoard[i][j] !== MINE) cellsLeftToWin--
+            console.log('cellsLeftToWin', cellsLeftToWin);
+        }
+    }
+    if(cellsLeftToWin === 0) {
         gGame.isOn = false
-        gGame.secsPassed = 0
-        clearInterval(gMyIntervalId)
+    gGame.secsPassed = 0
+    clearInterval(gMyIntervalId)
         gameStatus = '😍'
-        renderGameStatus()
+    renderGameStatus()
+        return true
     }
 }
 

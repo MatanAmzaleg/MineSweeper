@@ -1,5 +1,4 @@
 function setTime() {
-    console.log(gGame.shownCount);
     ++gGame.secsPassed
     var elSecSpan = document.querySelector('.sec-span')
     var elMsSpan = document.querySelector('.ms-span')
@@ -42,7 +41,7 @@ function cellClicked(elCell, i, j, ev) {
     if (ev.which === 3) {
         elCell.addEventListener("contextmenu", e => e.preventDefault());
         if (gBoard[i][j] === EMPTY || gBoard[i][j] === MINE) {
-            if (gGame.markedCount === gMinesCount) return
+            if (gGame.markedCount === gMinesCount || !elCell.classList.contains('unrevealed')) return
             gBoard[i][j] = FLAG
             elCell.innerText = FLAG
             gGame.markedCount++
@@ -57,22 +56,22 @@ function cellClicked(elCell, i, j, ev) {
         elCell.classList.remove('unrevealed')
         if (elCell.innerHTML === MINE) {
             gLives--
-            gGame.shownCount--
             var elLives = document.querySelector('.lives')
             elLives.innerText = elLives.innerText.slice(0, gLives)
             var elMine = document.querySelector(`.cell-${i}-${j} img`)
             elMine.style.display = 'block'
             elCell.classList.add('mine-hit')
-            console.log('gLives', gLives);
             if (gLives === 0) {
+                console.log('game over');
                 gameOver()
                 return
             }
         } else {
-            gGame.shownCount++
             var negsCount = setMinesNegsCount(i, j, gBoard)
             elCell.innerText = negsCount === 0 ? EMPTY : negsCount
             if (negsCount === 0) expandShown(i, j, gBoard)
+            // console.log();
+            if(checkVictory()) return
         }
     }
 }

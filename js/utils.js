@@ -6,10 +6,9 @@ function renderBoard(mat, selector) {
         strHTML += '<tr>'
         for (var j = 0; j < mat[0].length; j++) {
 
-            const cell = mat[i][j]
+            var cell = (mat[i][j] === MINE) ? MINE : EMPTY
             const className = 'cell unrevealed cell-' + i + '-' + j
-            console.log(className);
-            strHTML += `<td onMousedown="cellClicked(this, ${i}, ${j}, event)" class="${className}">${EMPTY}</td>`
+            strHTML += `<td onMousedown="cellClicked(this, ${i}, ${j}, event)" class="${className}">${cell}</td>`
         }
         strHTML += '</tr>'
     }
