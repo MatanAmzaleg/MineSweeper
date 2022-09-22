@@ -1,3 +1,5 @@
+'use strict'
+
 function renderBoard(mat, selector) {
 
     var strHTML = '<table border="0"><tbody>'
@@ -7,7 +9,7 @@ function renderBoard(mat, selector) {
         for (var j = 0; j < mat[0].length; j++) {
 
             var cell = (mat[i][j] === MINE) ? MINE : EMPTY
-            const className = 'cell unrevealed cell-' + i + '-' + j
+            const className = 'cell-' + i + '-' + j + ' cell unrevealed' 
             strHTML += `<td onMousedown="cellClicked(this, ${i}, ${j}, event)" class="${className}">${cell}</td>`
         }
         strHTML += '</tr>'

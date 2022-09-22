@@ -1,16 +1,26 @@
 body {
+    font-family: 'Bungee Spice', cursive;
     text-align: center;
     font-size: larger;
+    background: rgb(20,181,252);
+    background: linear-gradient(90deg, rgba(20,181,252,1) 0%, rgba(29,252,253,1) 36%, rgba(69,252,182,1) 100%); 
+}
+
+.toggle{
+    background: rgb(48,57,61);
+background: linear-gradient(90deg, rgba(48,57,61,1) 0%, rgba(62,163,163,1) 36%, rgba(4,102,65,1) 100%);
 }
 
 
 .main-title {
+    margin-top: 10px;
     font-size: 80px;
 }
 
 table {
+    background-color: #dbd7d7;
     margin: auto;
-    margin-top: 5%;
+    margin-top: 1px;
     border-spacing: 3px;
 }
 
@@ -21,15 +31,13 @@ table {
     width: 35px;
     height: 35px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
     background-color: rgb(226, 226, 226);
     color: rgb(91, 91, 248);
     font-weight: bold;
 }
 
 .unrevealed {
-    /* background: rgb(203, 201, 201);
-    background: radial-gradient(circle, rgba(203, 201, 201, 1) 17%, rgba(80, 80, 80, 1) 100%); */
     background-color: #C0C0C0;
     border: 1.5px solid;
     border-top-color: #ffffff;
@@ -51,25 +59,154 @@ table {
 }
 
 .bar {
-    background-color: aqua;
-    margin-top: 60px;
-    width: 100%;
-    height: 120px;
+    margin: auto;
+   margin-top: 60px;
+    margin-bottom: 30px;
+    width: 70%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .game-status {
-    margin-top: 50px;
+    margin-top: 80px;
     height: 45px;
-    width: 45px;
+    width: 55px;
     font-size: 20px;
 }
 
+.btn{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+
+
 .btn-div{
-    margin-top: 50px;
+    width: 100%;
     padding: 10px;
+    margin-top: 50px;
 }
 
 .lvl-btn{
     height: 30px;
     width: 100px;
 }
+
+.bar-middle{
+    width: 33%;
+    height: 100%;
+    /* background-color: blue; */
+    float: left;
+}
+
+.bar-left{
+    float: left;
+    width: 33%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.bar-right{
+    width: 34%;
+    float: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.undo-btn{
+    height: 45px;
+    width: 45px;
+    font-size: larger;
+}
+
+.mega-hint-btn{
+    margin-top: 5px;
+    height: 35px;
+    width: 150px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.hint-btn{
+height: 30px;
+    width: 30px;
+}
+
+.mine-exterminator{
+    margin-left: 10px;
+    height: 45px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
