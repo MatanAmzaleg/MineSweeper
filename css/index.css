@@ -3,7 +3,7 @@ body {
     text-align: center;
     font-size: larger;
     background: rgb(20,181,252);
-    background: linear-gradient(90deg, rgba(20,181,252,1) 0%, rgba(29,252,253,1) 36%, rgba(69,252,182,1) 100%); 
+    background: linear-gradient(90deg, rgb(20, 181, 252) 0%, rgba(29,252,253,1) 36%, rgba(69,252,182,1) 100%); 
 }
 
 .toggle{
@@ -28,16 +28,22 @@ table {
 
 .cell {
     padding: 5px;
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.1rem;
     background-color: rgb(226, 226, 226);
-    color: rgb(91, 91, 248);
+    transition: 0.5s;
     font-weight: bold;
 }
 
+.unrevealed:hover{
+    background-color:rgb(172, 172, 172);
+}
+
+
 .unrevealed {
+    
     background-color: #C0C0C0;
     border: 1.5px solid;
     border-top-color: #ffffff;
@@ -47,11 +53,10 @@ table {
 }
 
 .cell img {
-    margin-top: 6px;
     width: 25px;
     height: 25px;
     display: none;
-    margin-left: 8px;
+    margin: auto;
 }
 
 .mine-hit {
@@ -62,7 +67,7 @@ table {
     margin: auto;
    margin-top: 60px;
     margin-bottom: 30px;
-    width: 70%;
+    width: 60%;
     height: 140px;
     display: flex;
     align-items: center;
@@ -70,7 +75,7 @@ table {
 }
 
 .game-status {
-    margin-top: 80px;
+    margin-top: 50px;
     height: 45px;
     width: 55px;
     font-size: 20px;
@@ -100,7 +105,6 @@ table {
 .bar-middle{
     width: 33%;
     height: 100%;
-    /* background-color: blue; */
     float: left;
 }
 
@@ -124,9 +128,9 @@ table {
 }
 
 .undo-btn{
-    height: 45px;
-    width: 45px;
-    font-size: larger;
+    height: 50px;
+    width: 50px;
+    font-size:25px
 }
 
 .mega-hint-btn{
@@ -144,7 +148,7 @@ height: 30px;
 
 .mine-exterminator{
     margin-left: 10px;
-    height: 45px;
+    height: 50px;
     font-size: large;
     font-weight: bold;
 }
@@ -156,14 +160,12 @@ height: 30px;
     height: 34px;
   }
   
-  /* Hide default HTML checkbox */
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
   
-  /* The slider */
   .slider {
     position: absolute;
     cursor: pointer;
@@ -202,11 +204,85 @@ height: 30px;
     transform: translateX(26px);
   }
   
-  /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
   }
   
   .slider.round:before {
     border-radius: 50%;
+  }
+
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @media only screen and (max-width: 600px) {
+    body {
+      font-size: small;
+    }
+    .bar{
+        flex-direction: column;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .main-title{
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .btn{
+        width: 10px;
+        height: 10px;
+        font-size: 10px;
+    }
+    .undo-btn{
+        height: 23px;
+        width: 23px;
+        font-size: 13px;
+    }
+    
+    .mega-hint-btn{
+        margin-top: 5px;
+        height: 30px;
+        width: 80px;
+        font-weight: bold;
+        font-size: 10px;
+    }
+    
+    .hint-btn{
+    height: 25px;
+        width: 25px;
+        font-size: 10px;
+    }
+    
+    .mine-exterminator{
+        margin-left: 10px;
+        height: 30px;
+        font-weight: bold;
+        font-size: 10px;
+    }
+    .game-status {
+        margin: auto;
+        margin-top: 40px;
+        margin-bottom: 100px;
+        height: 45px;
+        width: 55px;
+        font-size: 20px;
+    }
+    .cell img {
+        width: 13px;
+        height: 13px;
+        display: none;
+        margin: auto;
+    }
+    .cell {
+        padding: 5px;
+        width: 22px;
+        height: 22px;
+        text-align: center;
+        font-size: 0.6rem;
+        background-color: rgb(226, 226, 226);
+        transition: 0.5s;
+        font-weight: bold;
+    }
   }

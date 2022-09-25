@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body onload="init()">
@@ -21,7 +22,7 @@
     <div class="bar">
         <div class="bar-left">
             <button class="undo-btn" onclick="undo()">🔙</button>
-            <button class="mine-exterminator" *\onclick="mineExterminator()"*\>MINE EXTERMINATOR💣</button>
+            <button class="mine-exterminator" onclick="mineExterminator()">MINE EXTERMINATOR💣</button>
         </div>
         <div class="bar-middle">
             <span class="sec-span">00:00</span><span class="ms-span"></span>
@@ -30,9 +31,9 @@
         </div>
         <div class="bar-right">
             <div class="col1">
-                <button class="hint-btn">💡</button>
-                <button class="hint-btn">💡</button>
-                <button class="hint-btn">💡</button>
+                <button class="hint-btn" onclick="hint()">💡</button>
+                <button class="hint-btn" onclick="hint()">💡</button>
+                <button class="hint-btn" onclick="hint()">💡</button>
             </div>
             <div class="col2">
                 <button onclick="megaHint()" class="mega-hint-btn">Mega hint💡</button>
